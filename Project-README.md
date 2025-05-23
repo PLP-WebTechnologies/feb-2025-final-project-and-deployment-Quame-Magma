@@ -58,7 +58,8 @@ shopease/
 
 ## Demo
 
-View the live demo here: [https://quame-magma.github.io/shopease/](https://quame-magma.github.io/shopease/)
+View the live demo here: https://shopeasegh.netlify.app/
+Repository to the project: https://github.com/PLP-WebTechnologies/feb-2025-final-project-and-deployment-Quame-Magma.git
 
 ## Future Improvements
 
