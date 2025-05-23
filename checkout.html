@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout | ShopEase</title>
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>ShopEase</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="cart-icon">
+                <a href="cart.html"><i class="fas fa-shopping-cart"></i> <span class="cart-count">0</span></a>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <section class="breadcrumb">
+        <div class="container">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="cart.html">Shopping Cart</a></li>
+                <li class="active">Checkout</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="checkout-section">
+        <div class="container">
+            <h1 class="page-title">Checkout</h1>
+
+            <div class="checkout-content">
+                <div class="checkout-form">
+                    <form id="checkout-form">
+                        <div class="form-section">
+                            <h2>Billing Details</h2>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="first-name">First Name *</label>
+                                    <input type="text" id="first-name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="last-name">Last Name *</label>
+                                    <input type="text" id="last-name" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="company-name">Company Name (Optional)</label>
+                                <input type="text" id="company-name">
+                            </div>
+                            <div class="form-group">
+                                <label for="country">Country / Region *</label>
+                                <select id="country" required>
+                                    <option value="">Select a country</option>
+                                    <option value="US">United States</option>
+                                    <option value="CA">Canada</option>
+                                    <option value="GB">United Kingdom</option>
+                                    <option value="AU">Australia</option>
+                                    <option value="DE">Germany</option>
+                                    <option value="FR">France</option>
+                                    <option value="GH">Ghana</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="street-address">Street Address *</label>
+                                <input type="text" id="street-address" placeholder="House number and street name"
+                                    required>
+                                <input type="text" id="street-address-2"
+                                    placeholder="Apartment, suite, unit, etc. (optional)">
+                            </div>
+                            <div class="form-group">
+                                <label for="city">Town / City *</label>
+                                <input type="text" id="city" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="state">State / County *</label>
+                                <input type="text" id="state" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="postcode">Postcode / ZIP *</label>
+                                <input type="text" id="postcode" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone *</label>
+                                <input type="tel" id="phone" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address *</label>
+                                <input type="email" id="email" required>
+                            </div>
+                        </div>
+
+                        <div class="form-section">
+                            <div class="form-group shipping-checkbox">
+                                <input type="checkbox" id="ship-to-different">
+                                <label for="ship-to-different">Ship to a different address?</label>
+                            </div>
+
+                            <div id="shipping-address" style="display: none;">
+                                <h2>Shipping Details</h2>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="shipping-first-name">First Name *</label>
+                                        <input type="text" id="shipping-first-name">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="shipping-last-name">Last Name *</label>
+                                        <input type="text" id="shipping-last-name">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="shipping-company-name">Company Name (Optional)</label>
+                                    <input type="text" id="shipping-company-name">
+                                </div>
+                                <div class="form-group">
+                                    <label for="shipping-country">Country / Region *</label>
+                                    <select id="shipping-country">
+                                        <option value="">Select a country</option>
+                                        <option value="US">United States</option>
+                                        <option value="CA">Canada</option>
+                                        <option value="GB">United Kingdom</option>
+                                        <option value="AU">Australia</option>
+                                        <option value="DE">Germany</option>
+                                        <option value="FR">France</option>
+                                        <option value="GH">Ghana</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="shipping-address">Street Address *</label>
+                                    <input type="text" id="shipping-address-1"
+                                        placeholder="House number and street name">
+                                    <input type="text" id="shipping-address-2"
+                                        placeholder="Apartment, suite, unit, etc. (optional)">
+                                </div>
+                                <div class="form-group">
+                                    <label for="shipping-city">Town / City *</label>
+                                    <input type="text" id="shipping-city">
+                                </div>
+                                <div class="form-group">
+                                    <label for="shipping-state">State / County *</label>
+                                    <input type="text" id="shipping-state">
+                                </div>
+                                <div class="form-group">
+                                    <label for="shipping-postcode">Postcode / ZIP *</label>
+                                    <input type="text" id="shipping-postcode">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-section">
+                            <h2>Additional Information</h2>
+                            <div class="form-group">
+                                <label for="order-notes">Order Notes (Optional)</label>
+                                <textarea id="order-notes"
+                                    placeholder="Notes about your order, e.g., special notes for delivery"></textarea>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="order-summary">
+                    <h2>Your Order</h2>
+                    <div class="summary-header">
+                        <span>Product</span>
+                        <span>Subtotal</span>
+                    </div>
+                    <div id="order-items">
+                        <!-- Order items will be dynamically loaded here -->
+                    </div>
+                    <div class="summary-item">
+                        <span>Subtotal</span>
+                        <span id="order-subtotal">$0.00</span>
+                    </div>
+                    <div class="summary-item">
+                        <span>Shipping</span>
+                        <span id="order-shipping">$0.00</span>
+                    </div>
+                    <div class="summary-item total">
+                        <span>Total</span>
+                        <span id="order-total">$0.00</span>
+                    </div>
+
+                    <div class="payment-methods">
+                        <h3>Payment Method</h3>
+                        <div class="payment-method">
+                            <input type="radio" id="payment-creditcard" name="payment-method" value="creditcard"
+                                checked>
+                            <label for="payment-creditcard">Credit Card</label>
+                            <div class="payment-details" id="creditcard-details">
+                                <div class="form-group">
+                                    <label for="card-number">Card Number</label>
+                                    <input type="text" id="card-number" placeholder="1234 5678 9012 3456">
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="expiry-date">Expiry (MM/YY)</label>
+                                        <input type="text" id="expiry-date" placeholder="MM/YY">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="cvv">CVV</label>
+                                        <input type="text" id="cvv" placeholder="123">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="card-name">Name on Card</label>
+                                    <input type="text" id="card-name">
+                                </div>
+                                <div class="card-icons">
+                                    <i class="fab fa-cc-visa"></i>
+                                    <i class="fab fa-cc-mastercard"></i>
+                                    <i class="fab fa-cc-amex"></i>
+                                    <i class="fab fa-cc-discover"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="payment-method">
+                            <input type="radio" id="payment-paypal" name="payment-method" value="paypal">
+                            <label for="payment-paypal">PayPal</label>
+                            <div class="payment-details" id="paypal-details" style="display: none;">
+                                <p>You will be redirected to PayPal to complete your payment securely.</p>
+                                <div class="paypal-icon">
+                                    <i class="fab fa-paypal"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="terms-agreement">
+                        <input type="checkbox" id="terms-agree" required>
+                        <label for="terms-agree">I have read and agree to the <a href="#">Terms and Conditions</a>
+                            *</label>
+                    </div>
+
+                    <button class="btn btn-full" id="place-order-btn">Place Order</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>ShopEase</h3>
+                    <p>Your one-stop shopping destination for all your needs.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="index.html#about">About Us</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Categories</h3>
+                    <ul>
+                        <li><a href="products.html?category=electronics">Electronics</a></li>
+                        <li><a href="products.html?category=fashion">Fashion</a></li>
+                        <li><a href="products.html?category=home">Home & Living</a></li>
+                        <li><a href="products.html?category=beauty">Beauty</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Commerce Street, Cityville, State 12345</p>
+                    <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+                    <p><i class="fas fa-envelope"></i> info@shopease.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 ShopEase. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Models -->
+<script src="assets/js/models/product.js"></script>
+<script src="assets/js/models/cart.js"></script>
+<script src="assets/js/models/user.js"></script>
+<!-- Services -->
+<script src="assets/js/services/api.js"></script>
+<script src="assets/js/services/storage.js"></script>
+
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/checkout.js"></script>
+</body>
+
+</html>

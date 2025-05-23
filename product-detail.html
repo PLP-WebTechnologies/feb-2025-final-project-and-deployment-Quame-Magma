@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details | ShopEase</title>
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>ShopEase</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html" class="active">Products</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="cart-icon">
+                <a href="cart.html"><i class="fas fa-shopping-cart"></i> <span class="cart-count">0</span></a>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <section class="breadcrumb">
+        <div class="container">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li id="product-category"><a href="#"></a></li>
+                <li id="product-name" class="active"></li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="product-detail">
+        <div class="container">
+            <div class="loading" id="product-loading">Loading product details...</div>
+            <div class="product-detail-content" id="product-detail-content" style="display: none;">
+                <div class="product-images">
+                    <div class="main-image" id="main-image">
+                        <img src="" alt="" id="featured-image">
+                    </div>
+                    <div class="thumbnail-images" id="thumbnail-images">
+                        <!-- Thumbnail images will be dynamically loaded here -->
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h1 id="product-title"></h1>
+                    <div class="product-meta">
+                        <div class="product-rating">
+                            <div class="stars" id="product-stars"></div>
+                            <span id="review-count"></span>
+                        </div>
+                        <div class="product-sku">
+                            SKU: <span id="product-sku"></span>
+                        </div>
+                    </div>
+                    <div class="product-price" id="product-price"></div>
+                    <div class="product-availability" id="product-availability"></div>
+                    <div class="product-short-desc" id="product-short-desc"></div>
+                    
+                    <div class="product-options">
+                        <div class="option" id="size-option">
+                            <label for="product-size">Size:</label>
+                            <select id="product-size">
+                                <!-- Size options will be loaded here if applicable -->
+                            </select>
+                        </div>
+                        <div class="option" id="color-option">
+                            <label>Color:</label>
+                            <div class="color-options" id="color-options">
+                                <!-- Color options will be loaded here if applicable -->
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="product-actions">
+                        <div class="quantity-selector">
+                            <button class="qty-btn" id="decrease-qty">-</button>
+                            <input type="number" id="product-quantity" value="1" min="1">
+                            <button class="qty-btn" id="increase-qty">+</button>
+                        </div>
+                        <button class="btn btn-add-to-cart" id="add-to-cart">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                        <button class="btn-wishlist" id="add-to-wishlist">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+                    
+                    <div class="product-meta-info">
+                        <p><i class="fas fa-shield-alt"></i> Secure Checkout</p>
+                        <p><i class="fas fa-truck"></i> Fast Shipping</p>
+                        <p><i class="fas fa-exchange-alt"></i> Easy Returns</p>
+                    </div>
+                    
+                    <div class="product-share">
+                        <span>Share:</span>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="product-details-tabs">
+        <div class="container">
+            <div class="tabs">
+                <div class="tab-headers">
+                    <button class="tab-btn active" data-tab="description">Description</button>
+                    <button class="tab-btn" data-tab="specifications">Specifications</button>
+                    <button class="tab-btn" data-tab="reviews">Reviews</button>
+                </div>
+                <div class="tab-content active" id="description-tab">
+                    <div id="product-description"></div>
+                </div>
+                <div class="tab-content" id="specifications-tab">
+                    <table class="specifications-table" id="specifications-table">
+                        <!-- Specifications will be dynamically loaded here -->
+                    </table>
+                </div>
+                <div class="tab-content" id="reviews-tab">
+                    <div class="reviews-summary">
+                        <div class="average-rating">
+                            <h3>Customer Reviews</h3>
+                            <div class="rating-big" id="average-rating"></div>
+                            <p><span id="rating-value"></span> out of 5</p>
+                            <p><span id="total-reviews"></span> reviews</p>
+                        </div>
+                        <div class="rating-breakdown" id="rating-breakdown">
+                            <!-- Rating breakdown will be dynamically loaded here -->
+                        </div>
+                    </div>
+                    <div class="reviews-list" id="reviews-list">
+                        <!-- Reviews will be dynamically loaded here -->
+                    </div>
+                    <div class="write-review">
+                        <h3>Write a Review</h3>
+                        <form id="review-form">
+                            <div class="form-group">
+                                <label>Your Rating:</label>
+                                <div class="rating-selector">
+                                    <i class="far fa-star" data-rating="1"></i>
+                                    <i class="far fa-star" data-rating="2"></i>
+                                    <i class="far fa-star" data-rating="3"></i>
+                                    <i class="far fa-star" data-rating="4"></i>
+                                    <i class="far fa-star" data-rating="5"></i>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="review-name">Your Name:</label>
+                                <input type="text" id="review-name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="review-email">Your Email:</label>
+                                <input type="email" id="review-email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="review-title">Review Title:</label>
+                                <input type="text" id="review-title" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="review-content">Your Review:</label>
+                                <textarea id="review-content" required></textarea>
+                            </div>
+                            <button type="submit" class="btn">Submit Review</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="related-products">
+        <div class="container">
+            <h2 class="section-title">Related Products</h2>
+            <div class="product-cards" id="related-products">
+                <!-- Related products will be dynamically loaded here -->
+            </div>
+        </div>
+    </section>
+
+    <section class="newsletter">
+        <div class="container">
+            <div class="newsletter-content">
+                <h3>Subscribe to Our Newsletter</h3>
+                <p>Get the latest updates, deals, and exclusive offers straight to your inbox.</p>
+                <form id="newsletter-form">
+                    <input type="email" placeholder="Enter your email" required>
+                    <button type="submit" class="btn">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>ShopEase</h3>
+                    <p>Your one-stop shopping destination for all your needs.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="index.html#about">About Us</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Categories</h3>
+                    <ul>
+                        <li><a href="products.html?category=electronics">Electronics</a></li>
+                        <li><a href="products.html?category=fashion">Fashion</a></li>
+                        <li><a href="products.html?category=home">Home & Living</a></li>
+                        <li><a href="products.html?category=beauty">Beauty</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Commerce Street, Cityville, State 12345</p>
+                    <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+                    <p><i class="fas fa-envelope"></i> info@shopease.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 ShopEase. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Models -->
+    <script src="assets/js/models/product.js"></script>
+    <script src="assets/js/models/cart.js"></script>
+    <script src="assets/js/models/user.js"></script>
+    <!-- Services -->
+    <script src="assets/js/services/api.js"></script>
+    <script src="assets/js/services/storage.js"></script>
+    
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/product-detail.js"></script>
+</body>
+</html>

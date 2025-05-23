@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products | ShopEase</title>
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>ShopEase</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html" class="active">Products</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="cart-icon">
+                <a href="cart.html"><i class="fas fa-shopping-cart"></i> <span class="cart-count">0</span></a>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <section class="products-banner">
+        <div class="container">
+            <h1>Our Products</h1>
+            <p>Explore our wide range of high-quality products</p>
+        </div>
+    </section>
+
+    <section class="products-section">
+        <div class="container">
+            <div class="products-filter">
+                <div class="filter-controls">
+                    <h3>Filters</h3>
+                    <div class="filter-group">
+                        <h4>Categories</h4>
+                        <div class="filter-options">
+                            <label><input type="checkbox" data-category="all" checked> All</label>
+                            <label><input type="checkbox" data-category="electronics"> Electronics</label>
+                            <label><input type="checkbox" data-category="fashion"> Fashion</label>
+                            <label><input type="checkbox" data-category="home"> Home & Living</label>
+                            <label><input type="checkbox" data-category="beauty"> Beauty</label>
+                        </div>
+                    </div>
+                    <div class="filter-group">
+                        <h4>Price Range</h4>
+                        <div class="price-slider">
+                            <input type="range" min="0" max="1000" value="1000" id="price-range">
+                            <div class="price-values">
+                                <span>$0</span>
+                                <span id="price-value">$1000</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="filter-group">
+                        <h4>Rating</h4>
+                        <div class="filter-options">
+                            <label><input type="radio" name="rating" value="all" checked> All</label>
+                            <label><input type="radio" name="rating" value="4"> 4+ Stars</label>
+                            <label><input type="radio" name="rating" value="3"> 3+ Stars</label>
+                            <label><input type="radio" name="rating" value="2"> 2+ Stars</label>
+                        </div>
+                    </div>
+                    <div class="filter-group">
+                        <h4>Availability</h4>
+                        <div class="filter-options">
+                            <label><input type="checkbox" id="in-stock"> In Stock Only</label>
+                        </div>
+                    </div>
+                    <button class="btn btn-small" id="apply-filters">Apply Filters</button>
+                    <button class="btn btn-small btn-outlined" id="clear-filters">Clear All</button>
+                </div>
+            </div>
+            <div class="products-results">
+                <div class="products-header">
+                    <div class="products-count">
+                        <p>Showing <span id="products-showing">0</span> of <span id="products-total">0</span> products
+                        </p>
+                    </div>
+                    <div class="products-sort">
+                        <label for="sort-by">Sort by:</label>
+                        <select id="sort-by">
+                            <option value="featured">Featured</option>
+                            <option value="price-low">Price: Low to High</option>
+                            <option value="price-high">Price: High to Low</option>
+                            <option value="rating">Customer Rating</option>
+                            <option value="newest">Newest Arrivals</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="product-cards" id="products-container">
+                    <!-- Products will be dynamically loaded here -->
+                    <div class="loading">Loading products...</div>
+                </div>
+                <div class="pagination">
+                    <button class="pagination-btn" id="prev-page" disabled>&laquo; Previous</button>
+                    <div class="pagination-numbers" id="pagination-numbers">
+                        <!-- Page numbers will be dynamically generated here -->
+                    </div>
+                    <button class="pagination-btn" id="next-page">Next &raquo;</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="newsletter">
+        <div class="container">
+            <div class="newsletter-content">
+                <h3>Subscribe to Our Newsletter</h3>
+                <p>Get the latest updates, deals, and exclusive offers straight to your inbox.</p>
+                <form id="newsletter-form">
+                    <input type="email" placeholder="Enter your email" required>
+                    <button type="submit" class="btn">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>ShopEase</h3>
+                    <p>Your one-stop shopping destination for all your needs.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="index.html#about">About Us</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Categories</h3>
+                    <ul>
+                        <li><a href="products.html?category=electronics">Electronics</a></li>
+                        <li><a href="products.html?category=fashion">Fashion</a></li>
+                        <li><a href="products.html?category=home">Home & Living</a></li>
+                        <li><a href="products.html?category=beauty">Beauty</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Commerce Street, Cityville, State 12345</p>
+                    <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+                    <p><i class="fas fa-envelope"></i> info@shopease.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 ShopEase. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Models -->
+    <script src="assets/js/models/product.js"></script>
+    <script src="assets/js/models/cart.js"></script>
+    <script src="assets/js/models/user.js"></script>
+    <!-- Services -->
+    <script src="assets/js/services/api.js"></script>
+    <script src="assets/js/services/storage.js"></script>
+    
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/products.js"></script>
+</body>
+
+</html>
